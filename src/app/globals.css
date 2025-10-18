@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+}
+
+@custom-variant hover (&:hover);
+
+:root {
+  --main-color: #000000;
+  --second-color: #ffffff;
+}
+
+body {
+  background-color: var(--second-color);
+}
+
+.ticker {
+  overflow: hidden;
+  position: relative;
+}
+
+.ticker__track {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  white-space: nowrap;
+  will-change: transform;
+  animation: ticker 10s linear infinite;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
