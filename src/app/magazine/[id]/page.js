@@ -42,6 +42,8 @@ function ArticlePage() {
     }, [articles]);
 
     useEffect(() => {
+        const sectionEl = sectionRef.current;
+        const headerEl = headerRef.current;
         // 🔹 Observer for the line animation
         const lineObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
@@ -64,13 +66,13 @@ function ArticlePage() {
 
 
         // 🔹 Attach observers
-        if (sectionRef.current) lineObserver.observe(sectionRef.current);
-        if (headerRef.current) headerObserver.observe(headerRef.current);
+        if (sectionEl) lineObserver.observe(sectionEl);
+        if (headerEl) headerObserver.observe(headerEl);
 
         // 🔹 Cleanup observers on unmount
         return () => {
-            if (sectionRef.current) lineObserver.unobserve(sectionRef.current);
-            if (headerRef.current) headerObserver.unobserve(headerRef.current);
+            if (sectionEl) lineObserver.unobserve(sectionEl);
+            if (headerEl) headerObserver.unobserve(headerEl);
         };
     }, []);
 
@@ -83,7 +85,8 @@ function ArticlePage() {
             <div className="min-h-screen flex items-center justify-center">
                 <div className="text-center">
                     <h1 className="text-4xl font-bold mb-4">Article Not Found</h1>
-                    <p className="text-lg mb-8">The article you're looking for doesn't exist.</p>
+                    <p className="text-lg mb-8">The article you&apos;re looking for doesn&apos;t exist.</p>
+
                     <Link
                         href="/magazine"
                         className="inline-flex items-center gap-2 bg-black font-bold px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors"

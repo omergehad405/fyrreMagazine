@@ -42,7 +42,9 @@ function PodcastPage() {
     }, [podcasts]);
 
     useEffect(() => {
-        // 🔹 Observer for the line animation
+        const sectionEl = sectionRef.current;
+        const headerEl = headerRef.current;
+
         const lineObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) setLineVisible(true);
@@ -52,7 +54,6 @@ function PodcastPage() {
             rootMargin: "0px 0px -150px 0px",
         });
 
-        // 🔹 Observer for the header animation
         const headerObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) setHeaderVisible(true);
@@ -62,17 +63,15 @@ function PodcastPage() {
             rootMargin: "0px 0px 10px 0px",
         });
 
+        if (sectionEl) lineObserver.observe(sectionEl);
+        if (headerEl) headerObserver.observe(headerEl);
 
-        // 🔹 Attach observers
-        if (sectionRef.current) lineObserver.observe(sectionRef.current);
-        if (headerRef.current) headerObserver.observe(headerRef.current);
-
-        // 🔹 Cleanup observers on unmount
         return () => {
-            if (sectionRef.current) lineObserver.unobserve(sectionRef.current);
-            if (headerRef.current) headerObserver.unobserve(headerRef.current);
+            if (sectionEl) lineObserver.unobserve(sectionEl);
+            if (headerEl) headerObserver.unobserve(headerEl);
         };
     }, []);
+
 
     // Find the podcast by ID
     const podcast = podcasts.find(podcast => podcast.id === parseInt(params.id));

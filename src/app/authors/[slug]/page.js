@@ -27,6 +27,10 @@ export default function AuthorPage() {
     );
 
     useEffect(() => {
+        const sectionEl = sectionRef.current;
+        const headerEl = headerRef.current;
+        const authorEl = authorCardRef?.current;
+
         const lineObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
@@ -61,16 +65,16 @@ export default function AuthorPage() {
         }, { root: null, rootMargin: "0px 0px -100px 0px", threshold: 0.3 }
         )
 
-        if (sectionRef.current) lineObserver.observe(sectionRef.current);
-        if (headerRef.current) headerObserver.observe(headerRef.current);
-        authorCardRef.current.forEach((card) => {
+        if (sectionEl) lineObserver.observe(sectionEl);
+        if (headerEl) headerObserver.observe(headerEl);
+        authorEl.forEach((card) => {
             if (card) authorCardObserver.observe(card);
         });
 
         return () => {
-            if (sectionRef.current) lineObserver.unobserve(sectionRef.current);
-            if (headerRef.current) headerObserver.unobserve(headerRef.current);
-            authorCardRef.current.forEach((card) => {
+            if (sectionEl) lineObserver.unobserve(sectionEl);
+            if (headerEl) headerObserver.unobserve(headerEl);
+            authorEl.forEach((card) => {
                 if (card) authorCardObserver.unobserve(card);
             });
         };
@@ -82,7 +86,8 @@ export default function AuthorPage() {
             <div className="min-h-screen flex items-center justify-center">
                 <div className="text-center">
                     <h1 className="text-4xl font-bold mb-4">author Not Found</h1>
-                    <p className="text-lg mb-8">The author you're looking for doesn't exist.</p>
+                    <p className="text-lg mb-8">The author you&apos;re looking for doesn&apos;t exist.</p>
+
                     <Link
                         href="/authors"
                         className="inline-flex items-center gap-2 bg-black font-bold px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors"
