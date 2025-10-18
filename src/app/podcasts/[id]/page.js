@@ -83,7 +83,7 @@ function PodcastPage() {
             <div className="min-h-screen flex items-center justify-center">
                 <div className="text-center">
                     <h1 className="text-4xl font-bold mb-4">podcast Not Found</h1>
-                    <p className="text-lg mb-8">The podcast you're looking for doesn't exist.</p>
+                    <p className="text-lg mb-8">The podcast you are looking for doesn not exist.</p>
                     <Link
                         href="/podcasts"
                         className="inline-flex items-center gap-2 bg-black font-bold px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors"
