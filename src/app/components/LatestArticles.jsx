@@ -18,7 +18,7 @@ function LatestArticles() {
             </div>
             <div className="flex lg:flex-row flex-col gap-10 items-start relative lg:mb-0 mb-5">
                 <div className="grow-1">
-                    {articles.map((article) => (
+                    {articles.slice(0, 5).map((article) => (
                         <div key={article.id} className="w-full flex lg:flex-row flex-col gap-10 mb-10 border-b pb-10">
                             <Image src={article.image} alt="articles image" width={250} height={250} className="scale-100 hover:scale-105 transition-all duration-500 w-auto" />
 
