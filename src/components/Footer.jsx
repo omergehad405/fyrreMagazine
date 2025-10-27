@@ -45,9 +45,9 @@ function Footer() {
         </div>
         <div className="border-t border-t-[#eee] pt-5 lg:h-[200px] h-[200px] w-[250px]">
           <ul className="">
-            <li className="lg:mb-10 mb-5"><Link href={"/magazene"} className="capitalize text-[#d5d5d5]">magazene</Link></li>
-            <li className="lg:mb-10 mb-5"><Link href={"/podcast"} className="capitalize text-[#d5d5d5]">podcast</Link></li>
-            <li className="lg:mb-10 mb-5"><Link href={"/authors"} className="capitalize text-[#d5d5d5]">authors</Link></li>
+            <li className="lg:mb-10 mb-5"><Link href="/magazine" className="capitalize text-[#d5d5d5]">magazene</Link></li>
+            <li className="lg:mb-10 mb-5"><Link href="/podcasts" className="capitalize text-[#d5d5d5]">podcast</Link></li>
+            <li className="lg:mb-10 mb-5"><Link href="/authors" className="capitalize text-[#d5d5d5]">authors</Link></li>
           </ul>
         </div>
         <div className="border-t border-t-[#eee] pt-5 lg:h-[200px] h-[200px] w-[250px]">

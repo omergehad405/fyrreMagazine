@@ -227,7 +227,7 @@ export default function AuthorPage() {
                                 {/* Article info */}
                                 <div>
                                     <Link
-                                        href={`/articles/${article.id}`}
+                                        href={`/magazine/${article.id}`}
                                         className="font-bold text-3xl mb-3 block"
                                     >
                                         {article.title}

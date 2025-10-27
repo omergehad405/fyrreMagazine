@@ -63,12 +63,13 @@ function ArticlesCards() {
     // 🔹 Handle pagination
     const handleNext = () => {
         if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        window.scrollTo(0, 0);
+
     };
 
     const handlePrev = () => {
         if (currentPage > 1) setCurrentPage((prev) => prev - 1);
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        window.scrollTo(0, 0);
     };
 
     // 🔹 Reset pagination + scroll to top on category change
