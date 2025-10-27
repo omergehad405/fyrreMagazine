@@ -207,7 +207,6 @@ export default function AuthorPage() {
                                 ref={(el) => (authorCardRef.current[i] = el)}
                                 data-index={i}
                                 className={`
-                                ${article.id % 2 == 0 ? "lg:border-l-transparent" : "lg:border-r-transparent"}
                                 ${authorCardVisible[i]
                                         ? "opacity-100 top-0"
                                         : "opacity-0 top-[10rem]"}
