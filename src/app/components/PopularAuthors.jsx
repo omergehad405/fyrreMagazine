@@ -113,7 +113,7 @@ function PopularAuthors() {
                         </div>
 
                         <div>
-                            <Link href={`/authors/${author.name}`} className="font-bold text-3xl mb-3">{author.name}</Link>
+                            <Link  href={`/authors/${author.slug}`} className="font-bold text-3xl mb-3">{author.name}</Link>
                             <div className="flex items-center gap-5">
                                 <p className="font-bold text-sm">
                                     Job <span className="font-normal ml-1">{author.job}</span>
