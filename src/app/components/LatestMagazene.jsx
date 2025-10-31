@@ -5,7 +5,7 @@ function LatestMagazene() {
     return (
         <section className="lg:my-15 flex lg:flex-col flex-col-reverse ">
             <div className="flex justify-between flex-wrap">
-                <Link href={`./magazene`} className="uppercase font-bold lg:text-[6rem] text-[3rem] lg:mt-0 mt-5 lg:w-[650px] leading-[1]">
+                <Link href={`./magazine`} className="uppercase font-bold lg:text-[6rem] text-[3rem] lg:mt-0 mt-5 lg:w-[650px] leading-[1]">
                     Don’t close your eyes
                 </Link>
 
@@ -28,7 +28,7 @@ function LatestMagazene() {
                 </div>
             </div>
 
-            <Link href="/" className="block w-full lg:h-[700px] h-[250px] relative mt-8">
+            <div className="block w-full lg:h-[700px] h-[250px] relative mt-8">
                 <Image
                     src="/latestMagazene.jpg"
                     alt="Logo"
@@ -38,7 +38,7 @@ function LatestMagazene() {
                     sizes="100vw"
                     priority
                 />
-            </Link>
+            </div>
         </section>
     )
 }

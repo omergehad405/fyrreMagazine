@@ -23,7 +23,7 @@ function LatestArticles() {
                             <Image src={article.image} alt="articles image" width={250} height={250} className="scale-100 hover:scale-105 transition-all duration-500 w-auto" />
 
                             <div className="relative">
-                                <Link href={`/magazene/${article.id}`} className="font-bold text-3xl mb-5 block">
+                                <Link href={`/magazine/${article.id}`} className="font-bold text-3xl mb-5 block">
                                     {article.title}
                                 </Link>
 
